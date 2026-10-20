@@ -105,7 +105,7 @@ def suggest_function(req: SuggestRequest, request: Request):
         return llm.suggest(RULES, req.name, req.description, req.lang)
     except llm.LLMError as e:
         log.warning("suggest-function failed: %s", e)
-        raise HTTPException(status_code=503, detail=str(e))
+        raise HTTPException(status_code=503, detail=str(e).split(":")[0])
 
 
 @app.get("/api/v1/suggest-selftest")
@@ -124,6 +124,6 @@ def suggest_selftest(request: Request):
             log.info("SUGGEST_SELFTEST %s | %s | first ok=%s | %s", name, ",".join(codes), ok,
                      " / ".join(c["reason"] for c in r["candidates"]))
         except llm.LLMError as e:
-            out.append({"product": name, "error": str(e)})
-            log.warning("SUGGEST_SELFTEST %s | error %s", name, e)
+            out.append({"product": name, "error": str(e).split(":")[0]})
+            log.warning("SUGGEST_SELFTEST %s | error %s | first try: %s", name, e, llm.LAST_ERROR.get("with_temperature", "-"))
     return {"passed": sum(1 for x in out if x.get("ok")), "total": len(out), "results": out}

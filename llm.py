@@ -28,6 +28,9 @@ class LLMError(Exception):
     pass
 
 
+LAST_ERROR: dict[str, str] = {}
+
+
 def _tool(codes: list[str]) -> dict:
     return {
         "name": "propose_categories",
@@ -36,10 +39,10 @@ def _tool(codes: list[str]) -> dict:
             "type": "object",
             "properties": {
                 "candidates": {
-                    "type": "array", "maxItems": MAX_CANDIDATES,
+                    "type": "array",
                     "items": {"type": "object", "properties": {
                         "code": {"type": "string", "enum": codes},
-                        "reason": {"type": "string", "maxLength": REASON_MAX}},
+                        "reason": {"type": "string"}},
                         "required": ["code", "reason"]}},
                 "insufficient_info": {"type": "boolean"},
             },
@@ -81,23 +84,22 @@ def call_anthropic(system: str, user: str, tool: dict, api_key: str | None = Non
     def post(body: dict) -> dict:
         req = urllib.request.Request(API_URL, data=json.dumps(body).encode(), method="POST", headers={
             "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01"})
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return json.loads(r.read())
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "replace")[:300]
+            raise LLMError(f"http_{e.code}: {detail}")
+        except Exception as e:
+            raise LLMError(f"unreachable: {type(e).__name__}")
 
     try:
-        try:
-            data = post({**base, "temperature": 0})
-        except urllib.error.HTTPError as e:
-            if e.code == 400 and "temperature" in e.read().decode("utf-8", "replace"):
-                data = post(base)  # some models fix the sampling settings: retry without temperature
-            else:
-                raise
-    except urllib.error.HTTPError as e:
-        raise LLMError(f"http_{e.code}")
-    except LLMError:
-        raise
-    except Exception:
-        raise LLMError("unreachable")
+        data = post({**base, "temperature": 0})
+    except LLMError as e:
+        if not str(e).startswith("http_400"):
+            raise
+        LAST_ERROR["with_temperature"] = str(e)
+        data = post(base)  # e.g. a model that fixes its sampling settings: retry once without temperature
     for block in data.get("content", []):
         if block.get("type") == "tool_use" and isinstance(block.get("input"), dict):
             return block["input"]
