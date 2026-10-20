@@ -26,4 +26,4 @@ decisions on postponing Machinery Regulation Annex III 1.1.9 and 1.2.1, new dele
 
 ## Status
 
-Step 1 of the first release: rules and tests. The API (Render) comes in step 2.
+Step 2: API on Render (`cyberplan-api`, Frankfurt). Endpoints: `/health`, `/api/v1/rules`, `/api/v1/evaluate`, `/api/v1/selftest`.
