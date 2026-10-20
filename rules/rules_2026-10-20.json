@@ -1,0 +1,825 @@
+{
+  "meta": {
+    "app": "CyberPlan",
+    "rules_version": "2026-10-20",
+    "status": "draft - to be reviewed by domain experts before public launch",
+    "legal_basis": {
+      "CRA": "Regulation (EU) 2024/2847 (Cyber Resilience Act), OJ L 2024/2847, 20.11.2024",
+      "CRA_IR": "Commission Implementing Regulation (EU) 2025/2392 (technical descriptions of important and critical product categories)",
+      "MR": "Regulation (EU) 2023/1230 on machinery (consolidated version 27.07.2026 exists on EUR-Lex; amending act not yet checked, see watch list)",
+      "MD": "Directive 2006/42/EC on machinery (repealed from 20.01.2027)"
+    },
+    "watch": [
+      {
+        "id": "W1",
+        "topic": "MR Annex III 1.1.9 and 1.2.1 postponement to 11.12.2027",
+        "status_on_rules_date": "Requested by industry (Jan-Mar 2026); no adopted legal act found. Rules apply 20.01.2027.",
+        "affects": [
+          "R8",
+          "R9",
+          "R10"
+        ]
+      },
+      {
+        "id": "W2",
+        "topic": "CRA harmonised standards cited in the OJ",
+        "status_on_rules_date": "None cited. Draft M/606 amendment moves first deliveries to 31.10.2026 (core) and 31.12.2026 (vertical).",
+        "affects": [
+          "R3"
+        ]
+      },
+      {
+        "id": "W3",
+        "topic": "MR consolidated text dated 27.07.2026",
+        "status_on_rules_date": "Amending act not identified (EUR-Lex text not readable from the build environment). Secondary sources dated Oct 2026 report no change to dates or to 1.1.9/1.2.1. To verify on EUR-Lex.",
+        "affects": [
+          "R6",
+          "R7",
+          "R8",
+          "R9"
+        ]
+      },
+      {
+        "id": "W4",
+        "topic": "CRA delegated acts under Art. 2(5)-(6) limiting scope for products covered by other Union rules",
+        "status_on_rules_date": "None found.",
+        "affects": [
+          "R1"
+        ]
+      }
+    ]
+  },
+  "dates": {
+    "CRA_REPORTING": {
+      "date": "2026-09-11",
+      "cite": "CRA Art. 71(2)"
+    },
+    "CRA_FULL": {
+      "date": "2027-12-11",
+      "cite": "CRA Art. 71(2)"
+    },
+    "MR_APPLICATION": {
+      "date": "2027-01-20",
+      "cite": "MR Art. 54"
+    }
+  },
+  "questions": {
+    "A1": {
+      "type": "single",
+      "options": [
+        "manufacturer",
+        "importer",
+        "distributor",
+        "modifier"
+      ],
+      "rules": [
+        "R1",
+        "R4",
+        "R9"
+      ]
+    },
+    "A1m": {
+      "type": "yesno",
+      "show_if": {
+        "A1": "modifier"
+      },
+      "note": "NEW (not in spec v0.1): does the modification affect compliance with CRA Annex I Part I or change the intended purpose? (CRA Art. 3(30), Art. 22)",
+      "rules": [
+        "R1"
+      ]
+    },
+    "A2": {
+      "type": "yesno",
+      "rules": [
+        "R1"
+      ]
+    },
+    "A3": {
+      "type": "single",
+      "options": [
+        "micro",
+        "small",
+        "medium",
+        "large"
+      ],
+      "rules": [
+        "R4"
+      ]
+    },
+    "A4": {
+      "type": "yesno",
+      "rules": [
+        "R4",
+        "R9"
+      ]
+    },
+    "B1": {
+      "type": "yesno",
+      "rules": [
+        "R1"
+      ]
+    },
+    "B2": {
+      "type": "yesno",
+      "rules": [
+        "R1"
+      ]
+    },
+    "B3": {
+      "type": "single",
+      "options": [
+        "medical",
+        "vehicles",
+        "aviation",
+        "marine",
+        "defence",
+        "none"
+      ],
+      "rules": [
+        "R1"
+      ]
+    },
+    "B4": {
+      "type": "single",
+      "options_from": "cra_categories",
+      "plus": [
+        "other"
+      ],
+      "rules": [
+        "R2",
+        "R3"
+      ]
+    },
+    "B5": {
+      "type": "multi",
+      "options": [
+        "ethernet",
+        "wifi",
+        "cellular",
+        "fieldbus",
+        "usb",
+        "remote_cloud"
+      ],
+      "rules": [
+        "R8"
+      ]
+    },
+    "B6": {
+      "type": "single",
+      "options": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "rules": [
+        "R10"
+      ]
+    },
+    "B7": {
+      "type": "number",
+      "min": 0,
+      "max": 50,
+      "unit": "years",
+      "rules": [
+        "R5"
+      ]
+    },
+    "C1": {
+      "type": "single",
+      "options": [
+        "machinery",
+        "interchangeable_equipment",
+        "safety_component",
+        "lifting_accessory",
+        "chains_ropes_webbing",
+        "removable_transmission",
+        "partly_completed",
+        "none"
+      ],
+      "rules": [
+        "R6"
+      ]
+    },
+    "C2": {
+      "type": "single",
+      "options_from": "mr_annex_i",
+      "plus": [
+        "none"
+      ],
+      "rules": [
+        "R7"
+      ]
+    },
+    "C2h": {
+      "type": "single",
+      "options": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "show_if_part": "B",
+      "note": "NEW (not in spec v0.1): for Annex I Part B, have you applied harmonised standards or common specifications covering all relevant essential requirements? (MR Art. 25(3))",
+      "rules": [
+        "R7"
+      ]
+    },
+    "C3": {
+      "type": "yesno",
+      "rules": [
+        "R7"
+      ]
+    },
+    "C4": {
+      "type": "yesno",
+      "rules": [
+        "R8"
+      ]
+    },
+    "C5": {
+      "type": "yesno",
+      "rules": [
+        "R8"
+      ]
+    },
+    "C6": {
+      "type": "yesno",
+      "rules": [
+        "R6"
+      ]
+    },
+    "C6a": {
+      "type": "yesno",
+      "show_if": {
+        "C6": "yes"
+      },
+      "text_hint": "The modification was not foreseen or planned by the original manufacturer",
+      "rules": [
+        "R6"
+      ]
+    },
+    "C6b": {
+      "type": "yesno",
+      "show_if": {
+        "C6": "yes"
+      },
+      "text_hint": "It creates a new hazard or increases an existing risk",
+      "rules": [
+        "R6"
+      ]
+    },
+    "C6c": {
+      "type": "yesno",
+      "show_if": {
+        "C6": "yes"
+      },
+      "text_hint": "It requires adding guards or protective devices that change the safety control system, or extra measures for stability or mechanical strength",
+      "rules": [
+        "R6"
+      ]
+    },
+    "C7": {
+      "type": "single",
+      "options": [
+        "before",
+        "after"
+      ],
+      "note": "Placing on the market is assessed per individual unit; see R9 note",
+      "rules": [
+        "R9"
+      ]
+    },
+    "D1": {
+      "type": "practice"
+    },
+    "D2": {
+      "type": "practice"
+    },
+    "D3": {
+      "type": "practice"
+    },
+    "D4": {
+      "type": "practice"
+    },
+    "D5": {
+      "type": "practice"
+    },
+    "D6": {
+      "type": "practice"
+    },
+    "D7": {
+      "type": "practice"
+    },
+    "D8": {
+      "type": "practice"
+    },
+    "D9": {
+      "type": "practice"
+    }
+  },
+  "practice_answers": [
+    "yes",
+    "partial",
+    "no",
+    "unknown"
+  ],
+  "cra_categories": {
+    "III.I.1": {
+      "class": "important_I",
+      "label": "Identity management systems and privileged access management software and hardware, including authentication and access control readers and biometric readers"
+    },
+    "III.I.2": {
+      "class": "important_I",
+      "label": "Standalone and embedded browsers"
+    },
+    "III.I.3": {
+      "class": "important_I",
+      "label": "Password managers"
+    },
+    "III.I.4": {
+      "class": "important_I",
+      "label": "Software that searches for, removes or quarantines malicious software"
+    },
+    "III.I.5": {
+      "class": "important_I",
+      "label": "Products with the function of virtual private network (VPN)"
+    },
+    "III.I.6": {
+      "class": "important_I",
+      "label": "Network management systems"
+    },
+    "III.I.7": {
+      "class": "important_I",
+      "label": "Security information and event management (SIEM) systems"
+    },
+    "III.I.8": {
+      "class": "important_I",
+      "label": "Boot managers"
+    },
+    "III.I.9": {
+      "class": "important_I",
+      "label": "Public key infrastructure and digital certificate issuance software"
+    },
+    "III.I.10": {
+      "class": "important_I",
+      "label": "Physical and virtual network interfaces"
+    },
+    "III.I.11": {
+      "class": "important_I",
+      "label": "Operating systems"
+    },
+    "III.I.12": {
+      "class": "important_I",
+      "label": "Routers, modems intended for connection to the internet, and switches"
+    },
+    "III.I.13": {
+      "class": "important_I",
+      "label": "Microprocessors with security-related functionalities"
+    },
+    "III.I.14": {
+      "class": "important_I",
+      "label": "Microcontrollers with security-related functionalities"
+    },
+    "III.I.15": {
+      "class": "important_I",
+      "label": "Application specific integrated circuits (ASIC) and field-programmable gate arrays (FPGA) with security-related functionalities"
+    },
+    "III.I.16": {
+      "class": "important_I",
+      "label": "Smart home general purpose virtual assistants"
+    },
+    "III.I.17": {
+      "class": "important_I",
+      "label": "Smart home products with security functionalities (smart door locks, security cameras, baby monitoring systems, alarm systems)"
+    },
+    "III.I.18": {
+      "class": "important_I",
+      "label": "Internet connected toys (Directive 2009/48/EC) with social interactive features or location tracking"
+    },
+    "III.I.19": {
+      "class": "important_I",
+      "label": "Personal wearable products with a health monitoring purpose not covered by Regulations (EU) 2017/745 or 2017/746, or intended for use by children"
+    },
+    "III.II.1": {
+      "class": "important_II",
+      "label": "Hypervisors and container runtime systems that support virtualised execution of operating systems and similar environments"
+    },
+    "III.II.2": {
+      "class": "important_II",
+      "label": "Firewalls, intrusion detection and prevention systems"
+    },
+    "III.II.3": {
+      "class": "important_II",
+      "label": "Tamper-resistant microprocessors"
+    },
+    "III.II.4": {
+      "class": "important_II",
+      "label": "Tamper-resistant microcontrollers"
+    },
+    "IV.1": {
+      "class": "critical",
+      "label": "Hardware devices with security boxes"
+    },
+    "IV.2": {
+      "class": "critical",
+      "label": "Smart meter gateways within smart metering systems (Directive (EU) 2019/944) and other devices for advanced security purposes, including secure cryptoprocessing"
+    },
+    "IV.3": {
+      "class": "critical",
+      "label": "Smartcards or similar devices, including secure elements"
+    }
+  },
+  "mr_annex_i": {
+    "A.1": {
+      "part": "A",
+      "label": "Removable mechanical transmission devices including their guards"
+    },
+    "A.2": {
+      "part": "A",
+      "label": "Guards for removable mechanical transmission devices"
+    },
+    "A.3": {
+      "part": "A",
+      "label": "Vehicle servicing lifts"
+    },
+    "A.4": {
+      "part": "A",
+      "label": "Portable cartridge-operated fixing and other impact machinery"
+    },
+    "A.5": {
+      "part": "A",
+      "label": "Safety components with fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions"
+    },
+    "A.6": {
+      "part": "A",
+      "label": "Machinery with embedded systems with fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions (only those systems)"
+    },
+    "B.any": {
+      "part": "B",
+      "label": "A category of Annex I Part B (woodworking saws and planers, presses for cold metal working, plastics/rubber moulding machinery, lifting of persons over 3 m, protective devices detecting persons, logic units for safety functions, ROPS, FOPS, and others)",
+      "note": "Full Part B list with numbering to be inserted after verification on EUR-Lex (W3)"
+    }
+  },
+  "R1": {
+    "title": "CRA scope",
+    "cite_scope": "CRA Art. 2(1), Art. 3(1)",
+    "cite_commercial": "CRA Art. 3(22)",
+    "exclusions": {
+      "medical": "CRA Art. 2(2)(a)-(b)",
+      "vehicles": "CRA Art. 2(2)(c)",
+      "aviation": "CRA Art. 2(3)",
+      "marine": "CRA Art. 2(4)",
+      "defence": "CRA Art. 2(7)"
+    },
+    "roles": {
+      "manufacturer": {
+        "obligations": "manufacturer",
+        "cite": "CRA Art. 13-14"
+      },
+      "importer": {
+        "obligations": "importer",
+        "cite": "CRA Art. 19"
+      },
+      "distributor": {
+        "obligations": "distributor",
+        "cite": "CRA Art. 20"
+      },
+      "modifier_substantial": {
+        "obligations": "manufacturer",
+        "cite": "CRA Art. 21-22"
+      },
+      "modifier_not_substantial": {
+        "obligations": "none_as_manufacturer",
+        "cite": "CRA Art. 22"
+      }
+    }
+  },
+  "R2": {
+    "title": "CRA class",
+    "cite": "CRA Art. 7(1), Art. 8, Annex III, Annex IV; Implementing Regulation (EU) 2025/2392",
+    "principle": "Classification follows the core functionality of the product; integrating an important product does not by itself make the host product important (Art. 7(1))",
+    "default_class": "default"
+  },
+  "R3": {
+    "title": "CRA conformity assessment",
+    "cite": "CRA Art. 32",
+    "harmonised_standards_cited": false,
+    "by_class": {
+      "default": {
+        "procedures": [
+          "A",
+          "B+C",
+          "H",
+          "EUCC"
+        ],
+        "notified_body": "no",
+        "cite": "CRA Art. 32(1)"
+      },
+      "important_I": {
+        "if_standards_applied": {
+          "procedures": [
+            "A",
+            "B+C",
+            "H",
+            "EUCC"
+          ],
+          "notified_body": "no",
+          "cite": "CRA Art. 32(2)"
+        },
+        "otherwise": {
+          "procedures": [
+            "B+C",
+            "H"
+          ],
+          "notified_body": "yes",
+          "cite": "CRA Art. 32(2)"
+        }
+      },
+      "important_II": {
+        "procedures": [
+          "B+C",
+          "H",
+          "EUCC_substantial"
+        ],
+        "notified_body": "yes",
+        "cite": "CRA Art. 32(3)"
+      },
+      "critical": {
+        "procedures": [
+          "EUCC_art8",
+          "B+C",
+          "H"
+        ],
+        "notified_body": "yes",
+        "cite": "CRA Art. 32(4), Art. 8(1)"
+      }
+    }
+  },
+  "R4": {
+    "title": "CRA reporting obligations",
+    "cite": "CRA Art. 14, Art. 69(3), Art. 71(2)",
+    "applies_to_obligations": [
+      "manufacturer"
+    ],
+    "deadlines": {
+      "early_warning_hours": 24,
+      "notification_hours": 72,
+      "final_report_vulnerability": "14 days after a corrective or mitigating measure is available",
+      "final_report_incident": "1 month after the incident notification"
+    },
+    "channel": "ENISA single reporting platform (Art. 16)",
+    "inform_users": "CRA Art. 14(8)",
+    "sme_fine_exemption": {
+      "sizes": [
+        "micro",
+        "small"
+      ],
+      "scope": "No administrative fines for missing the 24-hour early warning deadlines (Art. 14(2)(a) and 14(4)(a)); the obligation itself still applies",
+      "cite": "CRA Art. 64(10)(a)"
+    }
+  },
+  "R5": {
+    "title": "CRA support period",
+    "cite": "CRA Art. 13(8)",
+    "min_years": 5
+  },
+  "R6": {
+    "title": "MR scope and substantial modification",
+    "cite_scope": "MR Art. 2(1)",
+    "cite_partly_completed": "MR Art. 2(1), Art. 3(2)",
+    "cite_modification": "MR Art. 3(16), Art. 18",
+    "in_scope_products": [
+      "machinery",
+      "interchangeable_equipment",
+      "safety_component",
+      "lifting_accessory",
+      "chains_ropes_webbing",
+      "removable_transmission",
+      "partly_completed"
+    ]
+  },
+  "R7": {
+    "title": "MR conformity assessment",
+    "cite": "MR Art. 25; Annex I",
+    "part_A": {
+      "procedures": [
+        "B+C",
+        "H",
+        "G"
+      ],
+      "notified_body": "yes",
+      "cite": "MR Art. 25(2)"
+    },
+    "part_B_with_standards": {
+      "procedures": [
+        "A",
+        "B+C",
+        "H",
+        "G"
+      ],
+      "notified_body": "no",
+      "cite": "MR Art. 25(3)"
+    },
+    "part_B_without_standards": {
+      "procedures": [
+        "B+C",
+        "H",
+        "G"
+      ],
+      "notified_body": "yes",
+      "cite": "MR Art. 25(3)"
+    },
+    "other": {
+      "procedures": [
+        "A"
+      ],
+      "notified_body": "no",
+      "cite": "MR Art. 25(4)"
+    },
+    "partly_completed": {
+      "procedures": [
+        "declaration_of_incorporation"
+      ],
+      "notified_body": "no",
+      "cite": "MR Art. 11, Annex V",
+      "note": "Partly completed machinery: no CE marking, declaration of incorporation and assembly instructions"
+    }
+  },
+  "R8": {
+    "title": "MR cybersecurity requirements",
+    "cite": "MR Annex III 1.1.9, 1.2.1; MR Art. 20(9)",
+    "requirements": [
+      {
+        "id": "MR-1.1.9-a",
+        "cite": "MR Annex III 1.1.9",
+        "text": "Connecting another device or remote device must not lead to a hazardous situation"
+      },
+      {
+        "id": "MR-1.1.9-b",
+        "cite": "MR Annex III 1.1.9",
+        "text": "Hardware components transmitting signals or data relevant to safety are protected against accidental or intentional corruption"
+      },
+      {
+        "id": "MR-1.1.9-c",
+        "cite": "MR Annex III 1.1.9",
+        "text": "Software and data critical for compliance are identified and protected against accidental or intentional corruption"
+      },
+      {
+        "id": "MR-1.1.9-d",
+        "cite": "MR Annex III 1.1.9",
+        "text": "Evidence of legitimate or illegitimate intervention in that software or in its configuration is collected"
+      },
+      {
+        "id": "MR-1.2.1-a",
+        "cite": "MR Annex III 1.2.1",
+        "text": "Control systems withstand intended operating stresses and intended and unintended external influences, including reasonably foreseeable malicious attempts by third parties"
+      },
+      {
+        "id": "MR-1.2.1-d",
+        "cite": "MR Annex III 1.2.1",
+        "text": "Tracing logs of interventions on the safety-related software and of changes to it, kept for 5 years after upload"
+      },
+      {
+        "id": "MR-1.2.1-f",
+        "cite": "MR Annex III 1.2.1",
+        "text": "Safety-related control system limits are not exceeded by malicious actions"
+      }
+    ],
+    "exposure_triggers": {
+      "C4": "yes",
+      "C5": "yes",
+      "B5_any_of": [
+        "ethernet",
+        "wifi",
+        "cellular",
+        "remote_cloud",
+        "usb"
+      ]
+    },
+    "certification_presumption": "Certification or statement of conformity under a European cybersecurity scheme (Regulation (EU) 2019/881) gives presumption of conformity for 1.1.9 and 1.2.1 as far as covered (MR Art. 20(9))",
+    "verify_note": "Exact wording of 1.1.9 and 1.2.1 points and of Art. 20(9) to verify on EUR-Lex (W3)"
+  },
+  "R9": {
+    "title": "Timeline",
+    "cite": "CRA Art. 69, Art. 71; MR Art. 52, Art. 54",
+    "unit_note": "Placing on the market is assessed for each individual unit: units placed after a date must comply with the rules applicable on that date, even if the model was first sold earlier"
+  },
+  "R10": {
+    "title": "Gap checklist",
+    "cite": "CRA Annex I Parts I and II, Art. 13, Art. 14; MR Annex III",
+    "priority_rule": {
+      "high": "requirement already applicable on the evaluation date or applicable within high_window_days",
+      "medium": "requirement applicable later",
+      "high_window_days": 183,
+      "note": "Spec v0.1 said 'high = already in force; medium = by Dec 2027'. That makes almost every item medium (only D9 high), so the hot-lead rule '4+ high gaps' could never fire. Proposed change: high also when the deadline is within ~6 months. To confirm with Andrea."
+    },
+    "practices": {
+      "D1": {
+        "label": "Documented cybersecurity risk assessment",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Art. 13(2)-(3); Annex I Part I(1)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D2": {
+        "label": "Software bill of materials (SBOM)",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part II(1)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D3": {
+        "label": "Public contact for vulnerability reports and coordinated disclosure policy",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part II(5)-(6)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D4": {
+        "label": "Secure, free security updates",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part I(2)(c); Part II(7)-(8)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D5": {
+        "label": "Secure by default configuration, no shared default passwords",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part I(2)(b)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D6": {
+        "label": "Authentication and access control",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part I(2)(d)",
+            "date": "CRA_FULL"
+          },
+          {
+            "reg": "MR",
+            "cite": "MR Annex III 1.1.9",
+            "date": "MR_APPLICATION"
+          }
+        ]
+      },
+      "D7": {
+        "label": "Encryption of stored and transmitted data",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part I(2)(e)-(f)",
+            "date": "CRA_FULL"
+          }
+        ]
+      },
+      "D8": {
+        "label": "Logging of security events and software interventions",
+        "links": [
+          {
+            "reg": "CRA",
+            "cite": "CRA Annex I Part I(2)(l)",
+            "date": "CRA_FULL"
+          },
+          {
+            "reg": "MR",
+            "cite": "MR Annex III 1.1.9, 1.2.1",
+            "date": "MR_APPLICATION"
+          }
+        ]
+      },
+      "D9": {
+        "label": "Procedure to report an actively exploited vulnerability within 24 hours",
+        "links": [
+          {
+            "reg": "CRA_REPORTING",
+            "cite": "CRA Art. 14",
+            "date": "CRA_REPORTING"
+          }
+        ]
+      }
+    }
+  },
+  "lead_score": {
+    "hot": "CRA class important_II or critical, or MR Annex I Part A, or at least hot_high_gaps high-priority gaps",
+    "hot_high_gaps": 3,
+    "hot_high_gaps_note": "Spec v0.1 said 4. With the current practice-to-requirement links at most 3 gaps can be high (D6, D8 via MR 20.01.2027; D9 via CRA Art. 14), so 4 could never be reached. Proposed 3. To confirm with Andrea.",
+    "warm": "CRA or MR applicable (not hot)",
+    "cold": "neither CRA nor MR applicable"
+  }
+}
