@@ -818,7 +818,7 @@
   "lead_score": {
     "hot": "CRA class important_II or critical, or MR Annex I Part A, or at least hot_high_gaps high-priority gaps",
     "hot_high_gaps": 3,
-    "hot_high_gaps_note": "Spec v0.1 said 4. With the current practice-to-requirement links at most 3 gaps can be high (D6, D8 via MR 20.01.2027; D9 via CRA Art. 14), so 4 could never be reached. Proposed 3. To confirm with Andrea.",
+    "hot_high_gaps_note": "Spec v0.1 said 4, which could never be reached (at most 3 high gaps: D6, D8 via MR 20.01.2027; D9 via CRA Art. 14). Set to 3. Approved by Andrea Donadel on 2026-10-20.",
     "warm": "CRA or MR applicable (not hot)",
     "cold": "neither CRA nor MR applicable"
   }
