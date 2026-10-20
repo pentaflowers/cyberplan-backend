@@ -710,7 +710,7 @@
       "high": "requirement already applicable on the evaluation date or applicable within high_window_days",
       "medium": "requirement applicable later",
       "high_window_days": 183,
-      "note": "Spec v0.1 said 'high = already in force; medium = by Dec 2027'. That makes almost every item medium (only D9 high), so the hot-lead rule '4+ high gaps' could never fire. Proposed change: high also when the deadline is within ~6 months. To confirm with Andrea."
+      "note": "Spec v0.1 said 'high = already in force; medium = by Dec 2027'. Changed to: high also when the deadline is within ~6 months. Approved by Andrea Donadel on 2026-10-20."
     },
     "practices": {
       "D1": {
