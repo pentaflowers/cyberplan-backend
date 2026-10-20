@@ -7,9 +7,13 @@ Endpoints
 - GET  /api/v1/selftest        runs every test case on the live service
 - POST /api/v1/suggest-function   LLM proposes up to 3 CRA categories for question B4 (user chooses)
 - GET  /api/v1/suggest-selftest   runs 5 reference products through the LLM; results in the service log
+- POST /api/v1/report          contact + answers -> PDF report (base64); contact sent to the sheet, report emailed
+- GET  /api/v1/lead/status     webhook configuration and last forwarding result
 """
 from __future__ import annotations
 
+import base64
+import re
 from datetime import date, datetime
 from typing import Any, Optional
 from zoneinfo import ZoneInfo
@@ -22,6 +26,9 @@ from pydantic import BaseModel, Field
 
 from engine import AnswerError, evaluate, load_rules
 import llm
+import leads
+import report_pdf
+import report_text
 
 RULES = load_rules()
 TZ = ZoneInfo("Europe/Paris")
@@ -127,3 +134,69 @@ def suggest_selftest(request: Request):
             out.append({"product": name, "error": str(e).split(":")[0]})
             log.warning("SUGGEST_SELFTEST %s | error %s | first try: %s", name, e, llm.LAST_ERROR.get("with_temperature", "-"))
     return {"passed": sum(1 for x in out if x.get("ok")), "total": len(out), "results": out}
+
+
+class ContactModel(BaseModel):
+    first_name: str = Field("", max_length=80)
+    last_name: str = Field("", max_length=80)
+    email: str = Field("", max_length=200)
+    company: str = Field("", max_length=160)
+    role: str = Field("", max_length=120)
+    country: str = Field("", max_length=80)
+    consent_report: bool = False
+    consent_contact: bool = False
+
+
+class ProductModel(BaseModel):
+    name: str = Field("", max_length=120)
+    description: str = Field("", max_length=3000)
+
+
+class ReportRequest(BaseModel):
+    answers: dict[str, Any]
+    product: ProductModel = ProductModel()
+    contact: ContactModel
+    lang: str = Field("en", max_length=5)
+
+
+def _llm_caller(system, user, tool):
+    return llm.call_anthropic(system, user, tool, max_tokens=2000, timeout=90)
+
+
+def make_report(answers: dict, product: dict, lang: str, caller=_llm_caller, when: Optional[date] = None):
+    """Rule engine -> texts (LLM checked, standard fallback) -> PDF. Returns (result, pdf bytes, filename, origin)."""
+    when = when or today()
+    result = evaluate(answers, RULES, when)
+    texts, origin = report_text.llm_texts(result, lang, caller)
+    rep = report_text.build(result, product, lang, texts, origin, when)
+    pdf = report_pdf.render(rep)
+    slug = re.sub(r"[^A-Za-z0-9]+", "-", product.get("name") or "").strip("-")[:40]
+    filename = f"CyberPlan_report_{slug + '_' if slug else ''}{when.isoformat()}.pdf"
+    return result, pdf, filename, origin
+
+
+@app.post("/api/v1/report")
+def report_endpoint(req: ReportRequest, request: Request):
+    who = request.client.host if request.client else "?"
+    lang = req.lang if req.lang in ("en", "it") else "en"
+    try:
+        contact = leads.clean(req.contact.model_dump())
+    except leads.LeadError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    if not leads.rate_ok(who):
+        raise HTTPException(status_code=429, detail="daily_limit")
+    try:
+        result, pdf, filename, origin = make_report(req.answers, req.product.model_dump(), lang)
+    except AnswerError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    data = leads.payload(contact, result, req.product.name.strip(), lang, pdf, filename, report_text.DIAGNOSIS_URL)
+    forwarded = leads.forward(data)
+    log.info("REPORT %s score=%s llm=%s forwarded=%s", result["summary"]["cra"], result["summary"]["lead_score"],
+             ",".join(k for k, v in origin.items() if v == "llm"), forwarded)
+    return {"filename": filename, "pdf_base64": base64.b64encode(pdf).decode(), "emailed": forwarded,
+            "summary": result["summary"]}
+
+
+@app.get("/api/v1/lead/status")
+def lead_status():
+    return leads.status()

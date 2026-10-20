@@ -1,0 +1,662 @@
+{
+ "en": {
+  "q": {
+   "A1": {
+    "label": "What is your role for this product?",
+    "options": {
+     "manufacturer": "Manufacturer",
+     "importer": "Importer",
+     "distributor": "Distributor",
+     "modifier": "We modify an existing product"
+    }
+   },
+   "A1m": {
+    "label": "Does the modification affect the product's cybersecurity or change its intended purpose?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "A2": {
+    "label": "Is the product made available on the EU market as part of a commercial activity?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "A3": {
+    "label": "Company size",
+    "options": {
+     "micro": "Micro (under 10 people)",
+     "small": "Small (under 50)",
+     "medium": "Medium (under 250)",
+     "large": "Large"
+    }
+   },
+   "A4": {
+    "label": "Is the product already sold in the EU?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "B1": {
+    "label": "Does it contain software or firmware?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "B2": {
+    "label": "Does it exchange data with other devices or networks, even indirectly?",
+    "help": "For example through a PLC, a gateway, a USB stick or a service tool.",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "B3": {
+    "label": "Is it already covered by one of these laws?",
+    "options": {
+     "medical": "Medical or in vitro diagnostic devices",
+     "vehicles": "Motor vehicles (type approval)",
+     "aviation": "Civil aviation",
+     "marine": "Marine equipment",
+     "defence": "Exclusively national security or defence",
+     "none": "None of these"
+    }
+   },
+   "B4": {
+    "label": "What is the main function of the product?",
+    "help": "The class depends on the main function, not on secondary functions. A machine with a built-in router is not a router."
+   },
+   "B5": {
+    "label": "Which interfaces does it have?",
+    "options": {
+     "ethernet": "Ethernet",
+     "wifi": "Wi-Fi",
+     "cellular": "Mobile network",
+     "fieldbus": "Fieldbus",
+     "usb": "USB",
+     "remote_cloud": "Remote or cloud access"
+    }
+   },
+   "B6": {
+    "label": "Does it contain third-party or open-source software components?",
+    "options": {
+     "yes": "Yes",
+     "no": "No",
+     "unknown": "I don't know"
+    }
+   },
+   "B7": {
+    "label": "For how many years do you expect the product to stay in use?"
+   },
+   "C1": {
+    "label": "What type of product is it?",
+    "options": {
+     "machinery": "Machinery",
+     "interchangeable_equipment": "Interchangeable equipment",
+     "safety_component": "Safety component",
+     "lifting_accessory": "Lifting accessory",
+     "chains_ropes_webbing": "Chains, ropes or webbing",
+     "removable_transmission": "Removable mechanical transmission device",
+     "partly_completed": "Partly completed machinery",
+     "none": "None of these"
+    }
+   },
+   "C2": {
+    "label": "Is it in one of the Annex I categories?",
+    "help": "Annex I lists the higher-risk machinery. Most machines are not in it."
+   },
+   "C2h": {
+    "label": "Have you applied harmonised standards or common specifications covering all the relevant requirements for that category?",
+    "options": {
+     "yes": "Yes",
+     "no": "No",
+     "unknown": "I don't know"
+    }
+   },
+   "C3": {
+    "label": "Does it have systems that learn (machine learning) and perform safety functions?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C4": {
+    "label": "Is the control system connected to a network or accessible remotely?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C5": {
+    "label": "Can safety-related software be updated in the field?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C6": {
+    "label": "Are you modifying a machine already in service?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C6a": {
+    "label": "Was the modification not foreseen or planned by the original manufacturer?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C6b": {
+    "label": "Does it create a new hazard or increase an existing risk?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C6c": {
+    "label": "Does it require new guards or protective devices that change the safety control system, or extra measures for stability or mechanical strength?",
+    "options": {
+     "yes": "Yes",
+     "no": "No"
+    }
+   },
+   "C7": {
+    "label": "When will the product be first placed on the market?",
+    "options": {
+     "before": "Before 20 January 2027",
+     "after": "From 20 January 2027"
+    }
+   },
+   "D1": {
+    "label": "Documented cybersecurity risk assessment"
+   },
+   "D2": {
+    "label": "Inventory of software components (SBOM)"
+   },
+   "D3": {
+    "label": "Public address for vulnerability reports and a coordinated disclosure policy"
+   },
+   "D4": {
+    "label": "Security updates delivered securely and free of charge"
+   },
+   "D5": {
+    "label": "Secure default configuration, with no default password shared by all units"
+   },
+   "D6": {
+    "label": "Authentication and access control"
+   },
+   "D7": {
+    "label": "Encryption of stored and transmitted data"
+   },
+   "D8": {
+    "label": "Logging of security events and of interventions on the software"
+   },
+   "D9": {
+    "label": "Procedure to report an actively exploited vulnerability within 24 hours"
+   }
+  },
+  "practice": {
+   "yes": "Yes",
+   "partial": "Partly",
+   "no": "No",
+   "unknown": "I don't know"
+  },
+  "cra": {
+   "III.I.1": "Identity management and privileged access management systems, including access control and biometric readers",
+   "III.I.2": "Standalone and embedded browsers",
+   "III.I.3": "Password managers",
+   "III.I.4": "Software that searches for, removes or quarantines malicious software",
+   "III.I.5": "Products with virtual private network (VPN) function",
+   "III.I.6": "Network management systems",
+   "III.I.7": "Security information and event management (SIEM) systems",
+   "III.I.8": "Boot managers",
+   "III.I.9": "Public key infrastructure and digital certificate issuance software",
+   "III.I.10": "Physical and virtual network interfaces",
+   "III.I.11": "Operating systems",
+   "III.I.12": "Routers, modems for internet connection, and switches",
+   "III.I.13": "Microprocessors with security-related functionalities",
+   "III.I.14": "Microcontrollers with security-related functionalities",
+   "III.I.15": "ASICs and FPGAs with security-related functionalities",
+   "III.I.16": "Smart home general purpose virtual assistants",
+   "III.I.17": "Smart home products with security functions (door locks, security cameras, baby monitors, alarm systems)",
+   "III.I.18": "Internet-connected toys with social interactive or location tracking features",
+   "III.I.19": "Wearables with a health monitoring purpose not covered by the medical device rules, or intended for children",
+   "III.II.1": "Hypervisors and container runtime systems",
+   "III.II.2": "Firewalls, intrusion detection and prevention systems",
+   "III.II.3": "Tamper-resistant microprocessors",
+   "III.II.4": "Tamper-resistant microcontrollers",
+   "IV.1": "Hardware devices with security boxes",
+   "IV.2": "Smart meter gateways and other devices for advanced security purposes, including secure cryptoprocessing",
+   "IV.3": "Smartcards or similar devices, including secure elements",
+   "other": "None of these (for example PLCs, HMIs, sensors, machine controllers)"
+  },
+  "mr": {
+   "A.1": "Removable mechanical transmission devices, including their guards",
+   "A.2": "Guards for removable mechanical transmission devices",
+   "A.3": "Vehicle servicing lifts",
+   "A.4": "Portable cartridge-operated fixing and other impact machinery",
+   "A.5": "Safety components with self-evolving behaviour (machine learning) ensuring safety functions",
+   "A.6": "Machinery with embedded self-evolving (machine learning) systems ensuring safety functions",
+   "B.1": "Circular saws for wood or meat",
+   "B.2": "Hand-fed surface planing machinery for woodworking",
+   "B.3": "Thicknessers with manual loading or unloading for woodworking",
+   "B.4": "Band-saws with manual loading or unloading for wood or meat",
+   "B.5": "Combined woodworking machinery of points 1–4 and 7",
+   "B.6": "Hand-fed tenoning machinery with several tool holders",
+   "B.7": "Hand-fed vertical spindle moulding machinery for woodworking",
+   "B.8": "Portable chainsaws for woodworking",
+   "B.9": "Presses and press-brakes for cold working of metals, with manual loading or unloading",
+   "B.10": "Plastics injection or compression moulding machinery with manual loading or unloading",
+   "B.11": "Rubber injection or compression moulding machinery with manual loading or unloading",
+   "B.12": "Underground machinery: locomotives, brake-vans, hydraulic roof supports",
+   "B.13": "Manually loaded refuse collection trucks with compression mechanism",
+   "B.14": "Devices for lifting persons with a risk of falling from more than 3 m",
+   "B.15": "Protective devices designed to detect the presence of persons",
+   "B.16": "Power-operated interlocking movable guards for presses and moulding machinery",
+   "B.17": "Logic units to ensure safety functions",
+   "B.18": "Roll-over protective structures (ROPS)",
+   "B.19": "Falling-object protective structures (FOPS)",
+   "none": "None of these"
+  },
+  "procedure": {
+   "A": "Internal control (module A)",
+   "B+C": "EU type-examination + conformity to type (modules B+C)",
+   "H": "Full quality assurance (module H)",
+   "G": "Unit verification (module G)",
+   "EUCC": "European cybersecurity certification",
+   "EUCC_substantial": "European cybersecurity certification, at least \"substantial\" level",
+   "EUCC_art8": "European cybersecurity certification (Art. 8)",
+   "declaration_of_incorporation": "Declaration of incorporation (partly completed machinery)"
+  },
+  "deadline": {
+   "CRA_REPORTING": "CRA reporting of actively exploited vulnerabilities and severe incidents",
+   "MR_APPLICATION": "Machinery Regulation applies, including cybersecurity requirements",
+   "CRA_FULL": "CRA applies in full"
+  },
+  "outcome": {
+   "cra_applies": "The CRA applies",
+   "cra_not_applies": "The CRA does not apply",
+   "cra_excluded": "The CRA does not apply",
+   "reason_not_commercial": "The product is not made available as part of a commercial activity.",
+   "reason_no_data_connection": "The product does not exchange data with other devices or networks.",
+   "reason_excluded_medical": "The product is covered by the medical device rules.",
+   "reason_excluded_vehicles": "The product is covered by the vehicle type-approval rules.",
+   "reason_excluded_aviation": "The product is covered by the civil aviation rules.",
+   "reason_excluded_marine": "The product is covered by the marine equipment rules.",
+   "reason_excluded_defence": "The product is developed exclusively for national security or defence.",
+   "class_default": "Default",
+   "class_important_I": "Important — class I",
+   "class_important_II": "Important — class II",
+   "class_critical": "Critical",
+   "role_importer": "As importer you have the importer obligations; reporting and the support period are the manufacturer's.",
+   "role_distributor": "As distributor you have the distributor obligations; reporting and the support period are the manufacturer's.",
+   "role_modifier_substantial": "Your modification makes you the manufacturer of the modified product.",
+   "role_modifier_not_substantial": "Your modification does not make you a manufacturer under the CRA.",
+   "hardware_note": "Hardware with a data connection is also a product with digital elements.",
+   "future_module_A": "Internal control will become possible once CRA harmonised standards are cited in the Official Journal.",
+   "mr_applies": "The Machinery Regulation applies",
+   "mr_not_applies": "The Machinery Regulation does not apply",
+   "mr_part_A": "Part A: higher-risk category",
+   "mr_part_B": "Part B",
+   "mr_substantial": "Substantial modification: whoever modifies the machine becomes its manufacturer.",
+   "mr_not_substantial": "The modification is not substantial.",
+   "mr_cyber": "Cybersecurity requirements 1.1.9 and 1.2.1 of Annex III apply from 20 January 2027.",
+   "mr_cyber_high": "Your control system is connected or updatable: these requirements need detailed treatment.",
+   "mr_before_note": "Units placed on the market from 20 January 2027 must comply with the Regulation, even if the model was sold earlier."
+  },
+  "blocks": {
+   "A": {
+    "title": "Company and market",
+    "intro": "Your role and how the product reaches the EU market."
+   },
+   "B": {
+    "title": "The digital product (CRA)",
+    "intro": "Software, connections and main function."
+   },
+   "C": {
+    "title": "The machine (Machinery Regulation)",
+    "intro": "Skip the details if your product is not a machine: choose \"None of these\"."
+   },
+   "D": {
+    "title": "Current security practices",
+    "intro": "Answer for the product as it is today. \"Partly\" and \"I don't know\" are fine."
+   }
+  }
+ },
+ "it": {
+  "q": {
+   "A1": {
+    "label": "Che ruolo avete per questo prodotto?",
+    "options": {
+     "manufacturer": "Fabbricante",
+     "importer": "Importatore",
+     "distributor": "Distributore",
+     "modifier": "Modifichiamo un prodotto esistente"
+    }
+   },
+   "A1m": {
+    "label": "La modifica incide sulla cybersicurezza del prodotto o ne cambia l'uso previsto?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "A2": {
+    "label": "Il prodotto è messo a disposizione sul mercato UE nell'ambito di un'attività commerciale?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "A3": {
+    "label": "Dimensione dell'azienda",
+    "options": {
+     "micro": "Micro (meno di 10 persone)",
+     "small": "Piccola (meno di 50)",
+     "medium": "Media (meno di 250)",
+     "large": "Grande"
+    }
+   },
+   "A4": {
+    "label": "Il prodotto è già in vendita nell'UE?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "B1": {
+    "label": "Contiene software o firmware?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "B2": {
+    "label": "Scambia dati con altri dispositivi o reti, anche in modo indiretto?",
+    "help": "Per esempio tramite un PLC, un gateway, una chiavetta USB o uno strumento di assistenza.",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "B3": {
+    "label": "Ricade già in una di queste normative?",
+    "options": {
+     "medical": "Dispositivi medici o diagnostici in vitro",
+     "vehicles": "Veicoli a motore (omologazione)",
+     "aviation": "Aviazione civile",
+     "marine": "Equipaggiamento marittimo",
+     "defence": "Solo sicurezza nazionale o difesa",
+     "none": "Nessuna di queste"
+    }
+   },
+   "B4": {
+    "label": "Qual è la funzione principale del prodotto?",
+    "help": "La classe dipende dalla funzione principale, non da quelle secondarie. Una macchina con un router integrato non è un router."
+   },
+   "B5": {
+    "label": "Quali interfacce ha?",
+    "options": {
+     "ethernet": "Ethernet",
+     "wifi": "Wi-Fi",
+     "cellular": "Rete cellulare",
+     "fieldbus": "Bus di campo",
+     "usb": "USB",
+     "remote_cloud": "Accesso remoto o cloud"
+    }
+   },
+   "B6": {
+    "label": "Contiene componenti software di terzi o open source?",
+    "options": {
+     "yes": "Sì",
+     "no": "No",
+     "unknown": "Non so"
+    }
+   },
+   "B7": {
+    "label": "Per quanti anni prevedete che il prodotto resti in uso?"
+   },
+   "C1": {
+    "label": "Che tipo di prodotto è?",
+    "options": {
+     "machinery": "Macchina",
+     "interchangeable_equipment": "Attrezzatura intercambiabile",
+     "safety_component": "Componente di sicurezza",
+     "lifting_accessory": "Accessorio di sollevamento",
+     "chains_ropes_webbing": "Catene, funi o cinghie",
+     "removable_transmission": "Dispositivo amovibile di trasmissione meccanica",
+     "partly_completed": "Quasi-macchina",
+     "none": "Nessuno di questi"
+    }
+   },
+   "C2": {
+    "label": "Rientra in una categoria dell'Allegato I?",
+    "help": "L'Allegato I elenca le macchine a rischio più alto. La maggior parte delle macchine non ci rientra."
+   },
+   "C2h": {
+    "label": "Avete applicato norme armonizzate o specifiche comuni che coprono tutti i requisiti pertinenti per quella categoria?",
+    "options": {
+     "yes": "Sì",
+     "no": "No",
+     "unknown": "Non so"
+    }
+   },
+   "C3": {
+    "label": "Ha sistemi che apprendono (machine learning) e svolgono funzioni di sicurezza?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C4": {
+    "label": "Il sistema di comando è collegato a una rete o accessibile da remoto?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C5": {
+    "label": "Il software rilevante per la sicurezza si può aggiornare sul campo?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C6": {
+    "label": "State modificando una macchina già in servizio?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C6a": {
+    "label": "La modifica non era prevista né pianificata dal fabbricante originale?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C6b": {
+    "label": "Crea un nuovo pericolo o aumenta un rischio esistente?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C6c": {
+    "label": "Richiede nuove protezioni che cambiano il sistema di comando di sicurezza, o misure aggiuntive per stabilità o resistenza meccanica?",
+    "options": {
+     "yes": "Sì",
+     "no": "No"
+    }
+   },
+   "C7": {
+    "label": "Quando prevedete la prima immissione sul mercato?",
+    "options": {
+     "before": "Prima del 20 gennaio 2027",
+     "after": "Dal 20 gennaio 2027"
+    }
+   },
+   "D1": {
+    "label": "Valutazione dei rischi di cybersicurezza documentata"
+   },
+   "D2": {
+    "label": "Inventario dei componenti software (SBOM)"
+   },
+   "D3": {
+    "label": "Indirizzo pubblico per segnalare vulnerabilità e politica di divulgazione coordinata"
+   },
+   "D4": {
+    "label": "Aggiornamenti di sicurezza distribuiti in modo sicuro e gratuito"
+   },
+   "D5": {
+    "label": "Configurazione sicura di fabbrica, senza password predefinite uguali per tutti"
+   },
+   "D6": {
+    "label": "Autenticazione e controllo degli accessi"
+   },
+   "D7": {
+    "label": "Cifratura dei dati memorizzati e trasmessi"
+   },
+   "D8": {
+    "label": "Registrazione degli eventi di sicurezza e degli interventi sul software"
+   },
+   "D9": {
+    "label": "Procedura per segnalare entro 24 ore una vulnerabilità sfruttata"
+   }
+  },
+  "practice": {
+   "yes": "Sì",
+   "partial": "In parte",
+   "no": "No",
+   "unknown": "Non so"
+  },
+  "cra": {
+   "III.I.1": "Sistemi di gestione delle identità e degli accessi privilegiati, compresi lettori di controllo accessi e biometrici",
+   "III.I.2": "Browser autonomi e integrati",
+   "III.I.3": "Gestori di password",
+   "III.I.4": "Software che ricerca, rimuove o mette in quarantena software dannoso",
+   "III.I.5": "Prodotti con funzione di rete privata virtuale (VPN)",
+   "III.I.6": "Sistemi di gestione della rete",
+   "III.I.7": "Sistemi di gestione delle informazioni e degli eventi di sicurezza (SIEM)",
+   "III.I.8": "Gestori di avvio (boot manager)",
+   "III.I.9": "Infrastrutture a chiave pubblica e software di emissione di certificati digitali",
+   "III.I.10": "Interfacce di rete fisiche e virtuali",
+   "III.I.11": "Sistemi operativi",
+   "III.I.12": "Router, modem per la connessione a internet e switch",
+   "III.I.13": "Microprocessori con funzionalità di sicurezza",
+   "III.I.14": "Microcontrollori con funzionalità di sicurezza",
+   "III.I.15": "ASIC e FPGA con funzionalità di sicurezza",
+   "III.I.16": "Assistenti virtuali generici per la casa intelligente",
+   "III.I.17": "Prodotti per la casa intelligente con funzioni di sicurezza (serrature, telecamere, baby monitor, allarmi)",
+   "III.I.18": "Giocattoli connessi con funzioni interattive sociali o di localizzazione",
+   "III.I.19": "Dispositivi indossabili per il monitoraggio della salute non coperti dalle norme sui dispositivi medici, o destinati ai bambini",
+   "III.II.1": "Hypervisor e sistemi di runtime per container",
+   "III.II.2": "Firewall, sistemi di rilevamento e prevenzione delle intrusioni",
+   "III.II.3": "Microprocessori resistenti alle manomissioni",
+   "III.II.4": "Microcontrollori resistenti alle manomissioni",
+   "IV.1": "Dispositivi hardware con scatole di sicurezza (security box)",
+   "IV.2": "Gateway per contatori intelligenti e altri dispositivi per finalità di sicurezza avanzata, compresa l'elaborazione crittografica sicura",
+   "IV.3": "Smart card o dispositivi analoghi, compresi gli elementi sicuri",
+   "other": "Nessuna di queste (per esempio PLC, HMI, sensori, controllori di macchina)"
+  },
+  "mr": {
+   "A.1": "Dispositivi amovibili di trasmissione meccanica, comprese le loro protezioni",
+   "A.2": "Protezioni per dispositivi amovibili di trasmissione meccanica",
+   "A.3": "Ponti elevatori per veicoli",
+   "A.4": "Macchine portatili a carica esplosiva per il fissaggio e altre macchine ad impatto",
+   "A.5": "Componenti di sicurezza con comportamento autoevolutivo (machine learning) che svolgono funzioni di sicurezza",
+   "A.6": "Macchine con sistemi integrati autoevolutivi (machine learning) che svolgono funzioni di sicurezza",
+   "B.1": "Seghe circolari per legno o carne",
+   "B.2": "Piallatrici a filo con avanzamento manuale per legno",
+   "B.3": "Piallatrici a spessore con carico o scarico manuale per legno",
+   "B.4": "Seghe a nastro con carico o scarico manuale per legno o carne",
+   "B.5": "Macchine combinate per legno dei punti 1–4 e 7",
+   "B.6": "Tenonatrici a più porta-utensili con avanzamento manuale",
+   "B.7": "Fresatrici verticali (toupie) con avanzamento manuale per legno",
+   "B.8": "Motoseghe portatili per legno",
+   "B.9": "Presse e presse piegatrici per la lavorazione a freddo dei metalli, con carico o scarico manuale",
+   "B.10": "Macchine per lo stampaggio di materie plastiche a iniezione o compressione con carico o scarico manuale",
+   "B.11": "Macchine per lo stampaggio della gomma a iniezione o compressione con carico o scarico manuale",
+   "B.12": "Macchine per lavori sotterranei: locomotive, vagoni frenanti, armature idrauliche",
+   "B.13": "Veicoli per la raccolta dei rifiuti a caricamento manuale con meccanismo di compressione",
+   "B.14": "Dispositivi per il sollevamento di persone con rischio di caduta da oltre 3 m",
+   "B.15": "Dispositivi di protezione progettati per rilevare la presenza di persone",
+   "B.16": "Ripari mobili interbloccati motorizzati per presse e macchine di stampaggio",
+   "B.17": "Unità logiche per garantire funzioni di sicurezza",
+   "B.18": "Strutture di protezione in caso di ribaltamento (ROPS)",
+   "B.19": "Strutture di protezione contro la caduta di oggetti (FOPS)",
+   "none": "Nessuna di queste"
+  },
+  "procedure": {
+   "A": "Controllo interno (modulo A)",
+   "B+C": "Esame UE del tipo + conformità al tipo (moduli B+C)",
+   "H": "Garanzia qualità totale (modulo H)",
+   "G": "Verifica dell'unità (modulo G)",
+   "EUCC": "Certificazione europea di cybersicurezza",
+   "EUCC_substantial": "Certificazione europea di cybersicurezza, livello almeno \"sostanziale\"",
+   "EUCC_art8": "Certificazione europea di cybersicurezza (art. 8)",
+   "declaration_of_incorporation": "Dichiarazione di incorporazione (quasi-macchina)"
+  },
+  "deadline": {
+   "CRA_REPORTING": "Segnalazione CRA di vulnerabilità sfruttate e incidenti gravi",
+   "MR_APPLICATION": "Si applica il Regolamento Macchine, compresi i requisiti di cybersicurezza",
+   "CRA_FULL": "Il CRA si applica per intero"
+  },
+  "outcome": {
+   "cra_applies": "Il CRA si applica",
+   "cra_not_applies": "Il CRA non si applica",
+   "cra_excluded": "Il CRA non si applica",
+   "reason_not_commercial": "Il prodotto non è messo a disposizione nell'ambito di un'attività commerciale.",
+   "reason_no_data_connection": "Il prodotto non scambia dati con altri dispositivi o reti.",
+   "reason_excluded_medical": "Il prodotto ricade nelle norme sui dispositivi medici.",
+   "reason_excluded_vehicles": "Il prodotto ricade nelle norme sull'omologazione dei veicoli.",
+   "reason_excluded_aviation": "Il prodotto ricade nelle norme sull'aviazione civile.",
+   "reason_excluded_marine": "Il prodotto ricade nelle norme sull'equipaggiamento marittimo.",
+   "reason_excluded_defence": "Il prodotto è sviluppato solo per la sicurezza nazionale o la difesa.",
+   "class_default": "Predefinita",
+   "class_important_I": "Importante — classe I",
+   "class_important_II": "Importante — classe II",
+   "class_critical": "Critica",
+   "role_importer": "Come importatore hai gli obblighi dell'importatore; segnalazione e periodo di supporto spettano al fabbricante.",
+   "role_distributor": "Come distributore hai gli obblighi del distributore; segnalazione e periodo di supporto spettano al fabbricante.",
+   "role_modifier_substantial": "La tua modifica ti rende fabbricante del prodotto modificato.",
+   "role_modifier_not_substantial": "La tua modifica non ti rende fabbricante ai sensi del CRA.",
+   "hardware_note": "Anche un hardware con connessione dati è un prodotto con elementi digitali.",
+   "future_module_A": "Il controllo interno diventerà possibile quando le norme armonizzate del CRA saranno citate in Gazzetta Ufficiale.",
+   "mr_applies": "Il Regolamento Macchine si applica",
+   "mr_not_applies": "Il Regolamento Macchine non si applica",
+   "mr_part_A": "Parte A: categoria a rischio più alto",
+   "mr_part_B": "Parte B",
+   "mr_substantial": "Modifica sostanziale: chi modifica la macchina ne diventa il fabbricante.",
+   "mr_not_substantial": "La modifica non è sostanziale.",
+   "mr_cyber": "I requisiti di cybersicurezza 1.1.9 e 1.2.1 dell'Allegato III valgono dal 20 gennaio 2027.",
+   "mr_cyber_high": "Il sistema di comando è connesso o aggiornabile: questi requisiti vanno trattati in dettaglio.",
+   "mr_before_note": "Gli esemplari immessi sul mercato dal 20 gennaio 2027 devono rispettare il Regolamento, anche se il modello era già in vendita."
+  },
+  "blocks": {
+   "A": {
+    "title": "Azienda e mercato",
+    "intro": "Il tuo ruolo e come il prodotto arriva sul mercato UE."
+   },
+   "B": {
+    "title": "Il prodotto digitale (CRA)",
+    "intro": "Software, connessioni e funzione principale."
+   },
+   "C": {
+    "title": "La macchina (Regolamento Macchine)",
+    "intro": "Se il prodotto non è una macchina, scegli \"Nessuno di questi\" e vai avanti."
+   },
+   "D": {
+    "title": "Pratiche di sicurezza attuali",
+    "intro": "Rispondi per il prodotto com'è oggi. Vanno bene anche \"In parte\" e \"Non so\"."
+   }
+  }
+ }
+}
