@@ -68,6 +68,7 @@ Each reason:
 - one sentence in {LANG_NAMES.get(lang, 'English')}, at most 25 words;
 - says only which described function matches the category;
 - never mentions classes, annexes, obligations, procedures, notified bodies, deadlines or legal conclusions.
+- never says whether the product is or is not "listed", "covered" or "a safety component": the user and the rules decide that.
 
 Always answer by calling the propose_categories tool, never with plain text.
 
