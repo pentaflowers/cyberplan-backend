@@ -6,14 +6,14 @@
     "legal_basis": {
       "CRA": "Regulation (EU) 2024/2847 (Cyber Resilience Act), OJ L 2024/2847, 20.11.2024",
       "CRA_IR": "Commission Implementing Regulation (EU) 2025/2392 (technical descriptions of important and critical product categories)",
-      "MR": "Regulation (EU) 2023/1230 on machinery (consolidated version 27.07.2026 exists on EUR-Lex; amending act not yet checked, see watch list)",
+      "MR": "Regulation (EU) 2023/1230 on machinery, consolidated version 27.07.2026 (amended by Regulations (EU) 2024/2748 and 2026/1744)",
       "MD": "Directive 2006/42/EC on machinery (repealed from 20.01.2027)"
     },
     "watch": [
       {
         "id": "W1",
         "topic": "MR Annex III 1.1.9 and 1.2.1 postponement to 11.12.2027",
-        "status_on_rules_date": "Requested by industry (Jan-Mar 2026); no adopted legal act found. Rules apply 20.01.2027.",
+        "status_on_rules_date": "Requested by industry (Jan-Mar 2026). Not in the consolidated text of 27.07.2026: 1.1.9 and 1.2.1 apply from 20.01.2027 (Art. 54).",
         "affects": [
           "R8",
           "R9",
@@ -30,14 +30,9 @@
       },
       {
         "id": "W3",
-        "topic": "MR consolidated text dated 27.07.2026",
-        "status_on_rules_date": "Amending act not identified (EUR-Lex text not readable from the build environment). Secondary sources dated Oct 2026 report no change to dates or to 1.1.9/1.2.1. To verify on EUR-Lex.",
-        "affects": [
-          "R6",
-          "R7",
-          "R8",
-          "R9"
-        ]
+        "topic": "MR amendment by Regulation (EU) 2026/1744 (OJ L 1744, 24.7.2026)",
+        "status_on_rules_date": "Verified on the consolidated text: it only adds a delegated power for requirements on high-risk AI systems (Art. 8, delegated acts to apply by 2.8.2028) and Art. 20(10). No change to dates, Annex I, 1.1.9 or 1.2.1.",
+        "affects": []
       },
       {
         "id": "W4",
@@ -45,6 +40,15 @@
         "status_on_rules_date": "None found.",
         "affects": [
           "R1"
+        ]
+      },
+      {
+        "id": "W5",
+        "topic": "MR delegated acts adding Annex III requirements for high-risk AI systems (Art. 8, third paragraph, as amended by Reg. (EU) 2026/1744)",
+        "status_on_rules_date": "Power conferred from 27.07.2026; acts to apply by 02.08.2028. None adopted.",
+        "affects": [
+          "R7",
+          "R8"
         ]
       }
     ]
@@ -453,10 +457,81 @@
       "part": "A",
       "label": "Machinery with embedded systems with fully or partially self-evolving behaviour using machine learning approaches ensuring safety functions (only those systems)"
     },
-    "B.any": {
+    "B.1": {
       "part": "B",
-      "label": "A category of Annex I Part B (woodworking saws and planers, presses for cold metal working, plastics/rubber moulding machinery, lifting of persons over 3 m, protective devices detecting persons, logic units for safety functions, ROPS, FOPS, and others)",
-      "note": "Full Part B list with numbering to be inserted after verification on EUR-Lex (W3)"
+      "label": "Circular saws for wood or meat (types 1.1-1.4)"
+    },
+    "B.2": {
+      "part": "B",
+      "label": "Hand-fed surface planing machinery for woodworking"
+    },
+    "B.3": {
+      "part": "B",
+      "label": "Thicknessers for one-side dressing with manual loading/unloading, for woodworking"
+    },
+    "B.4": {
+      "part": "B",
+      "label": "Band-saws with manual loading/unloading for wood or meat"
+    },
+    "B.5": {
+      "part": "B",
+      "label": "Combined machinery of points 1-4 and 7 for woodworking"
+    },
+    "B.6": {
+      "part": "B",
+      "label": "Hand-fed tenoning machinery with several tool holders for woodworking"
+    },
+    "B.7": {
+      "part": "B",
+      "label": "Hand-fed vertical spindle moulding machinery for woodworking"
+    },
+    "B.8": {
+      "part": "B",
+      "label": "Portable chainsaws for woodworking"
+    },
+    "B.9": {
+      "part": "B",
+      "label": "Presses, including press-brakes, for cold working of metals, manual loading/unloading, travel > 6 mm and speed > 30 mm/s"
+    },
+    "B.10": {
+      "part": "B",
+      "label": "Injection or compression plastics-moulding machinery with manual loading or unloading"
+    },
+    "B.11": {
+      "part": "B",
+      "label": "Injection or compression rubber-moulding machinery with manual loading or unloading"
+    },
+    "B.12": {
+      "part": "B",
+      "label": "Machinery for underground working: locomotives and brake-vans, hydraulic-powered roof supports"
+    },
+    "B.13": {
+      "part": "B",
+      "label": "Manually loaded household refuse collection trucks with compression mechanism"
+    },
+    "B.14": {
+      "part": "B",
+      "label": "Devices for lifting persons, or persons and goods, with a hazard of falling from more than 3 m"
+    },
+    "B.15": {
+      "part": "B",
+      "label": "Protective devices designed to detect the presence of persons"
+    },
+    "B.16": {
+      "part": "B",
+      "label": "Power-operated interlocking movable guards for the machinery of points 9, 10 and 11"
+    },
+    "B.17": {
+      "part": "B",
+      "label": "Logic units to ensure safety functions"
+    },
+    "B.18": {
+      "part": "B",
+      "label": "Roll-over protective structures (ROPS)"
+    },
+    "B.19": {
+      "part": "B",
+      "label": "Falling-object protective structures (FOPS)"
     }
   },
   "R1": {
@@ -649,39 +724,39 @@
     "cite": "MR Annex III 1.1.9, 1.2.1; MR Art. 20(9)",
     "requirements": [
       {
-        "id": "MR-1.1.9-a",
+        "id": "MR-1.1.9-1",
         "cite": "MR Annex III 1.1.9",
-        "text": "Connecting another device or remote device must not lead to a hazardous situation"
+        "text": "Connecting another device, directly or through a remote device, must not lead to a hazardous situation"
       },
       {
-        "id": "MR-1.1.9-b",
+        "id": "MR-1.1.9-2",
         "cite": "MR Annex III 1.1.9",
-        "text": "Hardware components transmitting signals or data relevant to safety are protected against accidental or intentional corruption"
+        "text": "Hardware components transmitting signals or data relevant for access to compliance-critical software are protected against accidental or intentional corruption, with evidence of legitimate or illegitimate intervention"
       },
       {
-        "id": "MR-1.1.9-c",
+        "id": "MR-1.1.9-3",
         "cite": "MR Annex III 1.1.9",
         "text": "Software and data critical for compliance are identified and protected against accidental or intentional corruption"
       },
       {
-        "id": "MR-1.1.9-d",
+        "id": "MR-1.1.9-4",
         "cite": "MR Annex III 1.1.9",
-        "text": "Evidence of legitimate or illegitimate intervention in that software or in its configuration is collected"
+        "text": "The machine identifies the software needed to operate safely and can provide that information at all times"
+      },
+      {
+        "id": "MR-1.1.9-5",
+        "cite": "MR Annex III 1.1.9",
+        "text": "The machine collects evidence of legitimate or illegitimate intervention in, or modification of, the software or its configuration"
       },
       {
         "id": "MR-1.2.1-a",
-        "cite": "MR Annex III 1.2.1",
-        "text": "Control systems withstand intended operating stresses and intended and unintended external influences, including reasonably foreseeable malicious attempts by third parties"
-      },
-      {
-        "id": "MR-1.2.1-d",
-        "cite": "MR Annex III 1.2.1",
-        "text": "Tracing logs of interventions on the safety-related software and of changes to it, kept for 5 years after upload"
+        "cite": "MR Annex III 1.2.1(a)",
+        "text": "Control systems withstand intended and unintended external influences, including reasonably foreseeable malicious attempts from third parties"
       },
       {
         "id": "MR-1.2.1-f",
-        "cite": "MR Annex III 1.2.1",
-        "text": "Safety-related control system limits are not exceeded by malicious actions"
+        "cite": "MR Annex III 1.2.1(f)",
+        "text": "Tracing log of interventions and of safety software versions uploaded after placing on the market, kept for five years"
       }
     ],
     "exposure_triggers": {
@@ -695,8 +770,7 @@
         "usb"
       ]
     },
-    "certification_presumption": "Certification or statement of conformity under a European cybersecurity scheme (Regulation (EU) 2019/881) gives presumption of conformity for 1.1.9 and 1.2.1 as far as covered (MR Art. 20(9))",
-    "verify_note": "Exact wording of 1.1.9 and 1.2.1 points and of Art. 20(9) to verify on EUR-Lex (W3)"
+    "certification_presumption": "Certification or statement of conformity under a European cybersecurity scheme (Regulation (EU) 2019/881) gives presumption of conformity for 1.1.9 and 1.2.1 as far as covered (MR Art. 20(9))"
   },
   "R9": {
     "title": "Timeline",

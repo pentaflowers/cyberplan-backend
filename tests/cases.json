@@ -1,209 +1,485 @@
 {
   "evaluation_date": "2026-10-20",
   "base": {
-    "A1": "manufacturer", "A2": "yes", "A3": "medium", "A4": "no",
-    "B1": "yes", "B2": "yes", "B3": "none", "B4": "other", "B5": [], "B6": "no", "B7": 10,
-    "C1": "none", "C2": "none", "C3": "no", "C4": "no", "C5": "no", "C6": "no", "C7": "after",
-    "D1": "no", "D2": "no", "D3": "no", "D4": "no", "D5": "no", "D6": "no", "D7": "no", "D8": "no", "D9": "no"
+    "A1": "manufacturer",
+    "A2": "yes",
+    "A3": "medium",
+    "A4": "no",
+    "B1": "yes",
+    "B2": "yes",
+    "B3": "none",
+    "B4": "other",
+    "B5": [],
+    "B6": "no",
+    "B7": 10,
+    "C1": "none",
+    "C2": "none",
+    "C3": "no",
+    "C4": "no",
+    "C5": "no",
+    "C6": "no",
+    "C7": "after",
+    "D1": "no",
+    "D2": "no",
+    "D3": "no",
+    "D4": "no",
+    "D5": "no",
+    "D6": "no",
+    "D7": "no",
+    "D8": "no",
+    "D9": "no"
   },
   "cases": [
     {
-      "id": "T01", "name_it": "Router domestico, piccola impresa, già in vendita",
-      "answers": {"A3": "small", "A4": "yes", "B4": "III.I.12", "B5": ["ethernet", "wifi"], "B7": 6},
+      "id": "T01",
+      "name_it": "Router domestico, piccola impresa, già in vendita",
+      "answers": {
+        "A3": "small",
+        "A4": "yes",
+        "B4": "III.I.12",
+        "B5": [
+          "ethernet",
+          "wifi"
+        ],
+        "B7": 6
+      },
       "expect": {
-        "summary.cra": "applies", "summary.cra_class": "important_I", "summary.mr": "not_applies",
-        "results.R3.notified_body": "yes", "results.R3.future_note": "module_A_when_standards_cited",
-        "results.R4.status": "applies", "results.R4.in_force": true, "results.R4.already_on_market": true,
-        "results.R4.sme_fine_exemption": true, "results.R5.min_years": 5,
+        "summary.cra": "applies",
+        "summary.cra_class": "important_I",
+        "summary.mr": "not_applies",
+        "results.R3.notified_body": "yes",
+        "results.R3.future_note": "module_A_when_standards_cited",
+        "results.R4.status": "applies",
+        "results.R4.in_force": true,
+        "results.R4.already_on_market": true,
+        "results.R4.sme_fine_exemption": true,
+        "results.R5.min_years": 5,
         "summary.lead_score": "warm"
       },
       "why_it": "Router e switch sono nell'Allegato III classe I (punto 12). Senza norme armonizzate citate in GU serve un organismo notificato (moduli B+C o H). Segnalazione già in vigore anche per i prodotti già venduti; per una piccola impresa niente sanzioni sul solo termine delle 24 ore.",
       "cites": "CRA Art. 2, 7(1), 32(2), 14, 69(3), 64(10)(a); Allegato III"
     },
     {
-      "id": "T02", "name_it": "PLC con accesso remoto",
-      "answers": {"B4": "other", "B5": ["ethernet", "remote_cloud"], "C4": "yes"},
+      "id": "T02",
+      "name_it": "PLC con accesso remoto",
+      "answers": {
+        "B4": "other",
+        "B5": [
+          "ethernet",
+          "remote_cloud"
+        ],
+        "C4": "yes"
+      },
       "expect": {
-        "summary.cra": "applies", "summary.cra_class": "default",
-        "results.R3.notified_body": "no", "results.R3.procedures": ["A", "B+C", "H", "EUCC"],
-        "summary.mr": "not_applies", "summary.lead_score": "warm"
+        "summary.cra": "applies",
+        "summary.cra_class": "default",
+        "results.R3.notified_body": "no",
+        "results.R3.procedures": [
+          "A",
+          "B+C",
+          "H",
+          "EUCC"
+        ],
+        "summary.mr": "not_applies",
+        "summary.lead_score": "warm"
       },
       "why_it": "I PLC non sono elencati negli Allegati III e IV: classe predefinita, controllo interno (modulo A) possibile. Il PLC da solo non è una macchina.",
       "cites": "CRA Art. 6, 7(1), 32(1)"
     },
     {
-      "id": "T03", "name_it": "Ponte sollevatore per veicoli con app di diagnostica remota",
-      "answers": {"C1": "machinery", "C2": "A.3", "C4": "yes", "B5": ["wifi"]},
+      "id": "T03",
+      "name_it": "Ponte sollevatore per veicoli con app di diagnostica remota",
+      "answers": {
+        "C1": "machinery",
+        "C2": "A.3",
+        "C4": "yes",
+        "B5": [
+          "wifi"
+        ]
+      },
       "expect": {
-        "summary.cra": "applies", "summary.cra_class": "default",
-        "summary.mr": "applies", "summary.mr_annex_i_part": "A", "summary.mr_notified_body": "yes",
-        "results.R7.procedures": ["B+C", "H", "G"], "results.R8.exposure": "high",
+        "summary.cra": "applies",
+        "summary.cra_class": "default",
+        "summary.mr": "applies",
+        "summary.mr_annex_i_part": "A",
+        "summary.mr_notified_body": "yes",
+        "results.R7.procedures": [
+          "B+C",
+          "H",
+          "G"
+        ],
+        "results.R8.exposure": "high",
         "summary.lead_score": "hot"
       },
       "why_it": "I ponti sollevatori sono nell'Allegato I parte A del Regolamento Macchine: niente autovalutazione. Comando in rete: requisiti 1.1.9 e 1.2.1 da trattare in dettaglio.",
       "cites": "MR Art. 25(2); Allegato I parte A; Allegato III 1.1.9, 1.2.1"
     },
     {
-      "id": "T04", "name_it": "Macchina modificata in officina (modifica sostanziale), senza connessione",
-      "answers": {"A1": "modifier", "A1m": "no", "B1": "yes", "B2": "no", "C1": "machinery",
-                  "C6": "yes", "C6a": "yes", "C6b": "yes", "C6c": "yes"},
+      "id": "T04",
+      "name_it": "Macchina modificata in officina (modifica sostanziale), senza connessione",
+      "answers": {
+        "A1": "modifier",
+        "A1m": "no",
+        "B1": "yes",
+        "B2": "no",
+        "C1": "machinery",
+        "C6": "yes",
+        "C6a": "yes",
+        "C6b": "yes",
+        "C6c": "yes"
+      },
       "expect": {
-        "summary.cra": "not_applies", "results.R1.reason": "no_data_connection",
-        "summary.mr": "applies", "results.R6.modification": "substantial",
+        "summary.cra": "not_applies",
+        "results.R1.reason": "no_data_connection",
+        "summary.mr": "applies",
+        "results.R6.modification": "substantial",
         "results.R6.modifier_becomes_manufacturer": true,
-        "results.R7.procedures": ["A"], "summary.lead_score": "warm"
+        "results.R7.procedures": [
+          "A"
+        ],
+        "summary.lead_score": "warm"
       },
       "why_it": "Modifica non prevista, che aumenta un rischio e richiede nuove protezioni sul sistema di comando: è sostanziale e chi modifica diventa fabbricante. Senza scambio di dati il CRA non si applica.",
       "cites": "MR Art. 3(16), 18, 25(4); CRA Art. 2(1)"
     },
     {
-      "id": "T05", "name_it": "Macchina modificata, modifica non sostanziale",
-      "answers": {"A1": "modifier", "A1m": "no", "C1": "machinery",
-                  "C6": "yes", "C6a": "yes", "C6b": "yes", "C6c": "no"},
-      "expect": {"results.R6.modification": "not_substantial", "results.R6.modifier_becomes_manufacturer": false,
-                 "results.R1.obligations": "none_as_manufacturer", "results.R4.status": "not_direct"},
+      "id": "T05",
+      "name_it": "Macchina modificata, modifica non sostanziale",
+      "answers": {
+        "A1": "modifier",
+        "A1m": "no",
+        "C1": "machinery",
+        "C6": "yes",
+        "C6a": "yes",
+        "C6b": "yes",
+        "C6c": "no"
+      },
+      "expect": {
+        "results.R6.modification": "not_substantial",
+        "results.R6.modifier_becomes_manufacturer": false,
+        "results.R1.obligations": "none_as_manufacturer",
+        "results.R4.status": "not_direct"
+      },
       "why_it": "Manca una delle tre condizioni dell'art. 3(16): la modifica non è sostanziale. Per il CRA, chi modifica senza incidere sui requisiti non diventa fabbricante.",
       "cites": "MR Art. 3(16); CRA Art. 22"
     },
     {
-      "id": "T06", "name_it": "Prototipo non commerciale, non macchina",
-      "answers": {"A2": "no"},
-      "expect": {"summary.cra": "not_applies", "results.R1.reason": "not_commercial",
-                 "summary.mr": "not_applies", "summary.lead_score": "cold", "summary.next_deadline": null},
+      "id": "T06",
+      "name_it": "Prototipo non commerciale, non macchina",
+      "answers": {
+        "A2": "no"
+      },
+      "expect": {
+        "summary.cra": "not_applies",
+        "results.R1.reason": "not_commercial",
+        "summary.mr": "not_applies",
+        "summary.lead_score": "cold",
+        "summary.next_deadline": null
+      },
       "why_it": "Fuori da un'attività commerciale il prodotto non è 'messo a disposizione sul mercato'.",
       "cites": "CRA Art. 3(22)"
     },
     {
-      "id": "T07", "name_it": "Dispositivo medico connesso",
-      "answers": {"B3": "medical"},
-      "expect": {"summary.cra": "excluded", "results.R1.reason": "excluded_medical", "results.R2.status": "not_applicable"},
+      "id": "T07",
+      "name_it": "Dispositivo medico connesso",
+      "answers": {
+        "B3": "medical"
+      },
+      "expect": {
+        "summary.cra": "excluded",
+        "results.R1.reason": "excluded_medical",
+        "results.R2.status": "not_applicable"
+      },
       "why_it": "I dispositivi medici e diagnostici in vitro sono esclusi dal CRA.",
       "cites": "CRA Art. 2(2)"
     },
     {
-      "id": "T08", "name_it": "Firewall industriale",
-      "answers": {"B4": "III.II.2"},
-      "expect": {"summary.cra_class": "important_II", "results.R3.procedures": ["B+C", "H", "EUCC_substantial"],
-                 "results.R3.notified_body": "yes", "summary.lead_score": "hot"},
+      "id": "T08",
+      "name_it": "Firewall industriale",
+      "answers": {
+        "B4": "III.II.2"
+      },
+      "expect": {
+        "summary.cra_class": "important_II",
+        "results.R3.procedures": [
+          "B+C",
+          "H",
+          "EUCC_substantial"
+        ],
+        "results.R3.notified_body": "yes",
+        "summary.lead_score": "hot"
+      },
       "why_it": "Firewall e sistemi di rilevamento/prevenzione intrusioni: Allegato III classe II, sempre con terza parte.",
       "cites": "CRA Allegato III classe II punto 2; Art. 32(3)"
     },
     {
-      "id": "T09", "name_it": "Elemento sicuro / smart card",
-      "answers": {"B4": "IV.3"},
-      "expect": {"summary.cra_class": "critical", "results.R3.notified_body": "yes", "summary.lead_score": "hot"},
+      "id": "T09",
+      "name_it": "Elemento sicuro / smart card",
+      "answers": {
+        "B4": "IV.3"
+      },
+      "expect": {
+        "summary.cra_class": "critical",
+        "results.R3.notified_body": "yes",
+        "summary.lead_score": "hot"
+      },
       "why_it": "Smart card ed elementi sicuri sono prodotti critici (Allegato IV).",
       "cites": "CRA Allegato IV; Art. 8, 32(4)"
     },
     {
-      "id": "T10", "name_it": "Importatore di router",
-      "answers": {"A1": "importer", "B4": "III.I.12"},
-      "expect": {"summary.cra": "applies", "results.R1.obligations": "importer", "results.R4.status": "not_direct",
-                 "results.R5.status": "not_applicable", "summary.high_gaps": 0, "summary.top_actions": []},
+      "id": "T10",
+      "name_it": "Importatore di router",
+      "answers": {
+        "A1": "importer",
+        "B4": "III.I.12"
+      },
+      "expect": {
+        "summary.cra": "applies",
+        "results.R1.obligations": "importer",
+        "results.R4.status": "not_direct",
+        "results.R5.status": "not_applicable",
+        "summary.high_gaps": 0,
+        "summary.top_actions": []
+      },
       "why_it": "L'importatore ha i suoi obblighi (art. 19), ma la segnalazione all'ENISA e il periodo di supporto sono del fabbricante.",
       "cites": "CRA Art. 19, 14, 13(8)"
     },
     {
-      "id": "T11", "name_it": "Prodotto con vita d'uso breve (3 anni)",
-      "answers": {"B7": 3},
-      "expect": {"results.R5.min_years": 3, "results.R5.reflect_expected_use": false},
+      "id": "T11",
+      "name_it": "Prodotto con vita d'uso breve (3 anni)",
+      "answers": {
+        "B7": 3
+      },
+      "expect": {
+        "results.R5.min_years": 3,
+        "results.R5.reflect_expected_use": false
+      },
       "why_it": "Se l'uso previsto è inferiore a 5 anni, il periodo di supporto corrisponde all'uso previsto.",
       "cites": "CRA Art. 13(8)"
     },
     {
-      "id": "T12", "name_it": "Prodotto con vita d'uso lunga (15 anni)",
-      "answers": {"B7": 15},
-      "expect": {"results.R5.min_years": 5, "results.R5.expected_use_years": 15, "results.R5.reflect_expected_use": true},
+      "id": "T12",
+      "name_it": "Prodotto con vita d'uso lunga (15 anni)",
+      "answers": {
+        "B7": 15
+      },
+      "expect": {
+        "results.R5.min_years": 5,
+        "results.R5.expected_use_years": 15,
+        "results.R5.reflect_expected_use": true
+      },
       "why_it": "Almeno 5 anni, e il periodo deve riflettere la vita d'uso prevista.",
       "cites": "CRA Art. 13(8)"
     },
     {
-      "id": "T13", "name_it": "Macchina con funzione di sicurezza basata su machine learning",
-      "answers": {"C1": "machinery", "C3": "yes"},
-      "expect": {"summary.mr_annex_i_part": "A", "results.R7.reason": "ml_safety_function", "summary.mr_notified_body": "yes"},
+      "id": "T13",
+      "name_it": "Macchina con funzione di sicurezza basata su machine learning",
+      "answers": {
+        "C1": "machinery",
+        "C3": "yes"
+      },
+      "expect": {
+        "summary.mr_annex_i_part": "A",
+        "results.R7.reason": "ml_safety_function",
+        "summary.mr_notified_body": "yes"
+      },
       "why_it": "Sistemi con comportamento autoevolutivo che svolgono funzioni di sicurezza: Allegato I parte A.",
       "cites": "MR Allegato I parte A punti 5-6; Art. 25(2)"
     },
     {
-      "id": "T14", "name_it": "Pressa (Allegato I parte B) con norme armonizzate applicate",
-      "answers": {"C1": "machinery", "C2": "B.any", "C2h": "yes"},
-      "expect": {"summary.mr_annex_i_part": "B", "summary.mr_notified_body": "no", "results.R7.procedures": ["A", "B+C", "H", "G"]},
+      "id": "T14",
+      "name_it": "Pressa (Allegato I parte B) con norme armonizzate applicate",
+      "answers": {
+        "C1": "machinery",
+        "C2": "B.9",
+        "C2h": "yes"
+      },
+      "expect": {
+        "summary.mr_annex_i_part": "B",
+        "summary.mr_notified_body": "no",
+        "results.R7.procedures": [
+          "A",
+          "B+C",
+          "H",
+          "G"
+        ]
+      },
       "why_it": "Parte B: autovalutazione possibile solo con norme armonizzate o specifiche comuni che coprono tutti i requisiti.",
       "cites": "MR Art. 25(3)"
     },
     {
-      "id": "T15", "name_it": "Pressa (Allegato I parte B) senza norme armonizzate",
-      "answers": {"C1": "machinery", "C2": "B.any", "C2h": "no"},
-      "expect": {"summary.mr_notified_body": "yes", "results.R7.procedures": ["B+C", "H", "G"]},
+      "id": "T15",
+      "name_it": "Pressa (Allegato I parte B) senza norme armonizzate",
+      "answers": {
+        "C1": "machinery",
+        "C2": "B.9",
+        "C2h": "no"
+      },
+      "expect": {
+        "summary.mr_notified_body": "yes",
+        "results.R7.procedures": [
+          "B+C",
+          "H",
+          "G"
+        ]
+      },
       "why_it": "Parte B senza norme armonizzate: serve un organismo notificato.",
       "cites": "MR Art. 25(3)"
     },
     {
-      "id": "T16", "name_it": "Quasi-macchina",
-      "answers": {"C1": "partly_completed"},
-      "expect": {"summary.mr": "applies", "results.R7.procedures": ["declaration_of_incorporation"], "summary.mr_notified_body": "no"},
+      "id": "T16",
+      "name_it": "Quasi-macchina",
+      "answers": {
+        "C1": "partly_completed"
+      },
+      "expect": {
+        "summary.mr": "applies",
+        "results.R7.procedures": [
+          "declaration_of_incorporation"
+        ],
+        "summary.mr_notified_body": "no"
+      },
       "why_it": "La quasi-macchina non porta la marcatura CE: dichiarazione di incorporazione e istruzioni di assemblaggio.",
       "cites": "MR Art. 11; Allegato V"
     },
     {
-      "id": "T17", "name_it": "Priorità dei gap: macchina connessa, nessuna pratica in atto",
-      "answers": {"C1": "machinery", "C4": "yes"},
+      "id": "T17",
+      "name_it": "Priorità dei gap: macchina connessa, nessuna pratica in atto",
+      "answers": {
+        "C1": "machinery",
+        "C4": "yes"
+      },
       "expect": {
-        "summary.high_gaps": 3, "summary.top_actions": ["D9", "D6", "D8"], "summary.lead_score": "hot",
+        "summary.high_gaps": 3,
+        "summary.top_actions": [
+          "D9",
+          "D6",
+          "D8"
+        ],
+        "summary.lead_score": "hot",
         "summary.next_deadline.key": "MR_APPLICATION"
       },
       "why_it": "Alta priorità: segnalazione 24 ore (già in vigore) e accessi/registro eventi (Regolamento Macchine dal 20/01/2027). Le altre pratiche CRA sono per dicembre 2027: priorità media.",
       "cites": "CRA Art. 14; MR Allegato III 1.1.9, 1.2.1; CRA Allegato I"
     },
     {
-      "id": "T18", "name_it": "Pratiche già in atto: nessun gap",
-      "answers": {"C1": "machinery", "D1": "yes", "D2": "yes", "D3": "yes", "D4": "yes", "D5": "yes", "D6": "yes", "D7": "yes", "D8": "yes", "D9": "yes"},
-      "expect": {"summary.high_gaps": 0, "summary.top_actions": [], "summary.lead_score": "warm"},
+      "id": "T18",
+      "name_it": "Pratiche già in atto: nessun gap",
+      "answers": {
+        "C1": "machinery",
+        "D1": "yes",
+        "D2": "yes",
+        "D3": "yes",
+        "D4": "yes",
+        "D5": "yes",
+        "D6": "yes",
+        "D7": "yes",
+        "D8": "yes",
+        "D9": "yes"
+      },
+      "expect": {
+        "summary.high_gaps": 0,
+        "summary.top_actions": [],
+        "summary.lead_score": "warm"
+      },
       "why_it": "Tutte le pratiche in atto: nessuna azione prioritaria.",
       "cites": "CRA Allegato I; MR Allegato III"
     },
     {
-      "id": "T19", "name_it": "Macchina già in vendita prima del 20/01/2027",
-      "answers": {"C1": "machinery", "C7": "before", "A4": "yes"},
-      "expect": {"results.R9.mr_unit_note": true, "results.R9.cra_legacy_note": true},
+      "id": "T19",
+      "name_it": "Macchina già in vendita prima del 20/01/2027",
+      "answers": {
+        "C1": "machinery",
+        "C7": "before",
+        "A4": "yes"
+      },
+      "expect": {
+        "results.R9.mr_unit_note": true,
+        "results.R9.cra_legacy_note": true
+      },
       "why_it": "L'immissione sul mercato si valuta per ogni esemplare: gli esemplari immessi dopo il 20/01/2027 devono rispettare il Regolamento.",
       "cites": "MR Art. 52; CRA Art. 69(2)"
     },
     {
-      "id": "T20", "name_it": "Solo hardware con connessione dati",
-      "answers": {"B1": "no", "B2": "yes"},
-      "expect": {"summary.cra": "applies", "results.R1.notes": ["hardware_with_data_connection"]},
+      "id": "T20",
+      "name_it": "Solo hardware con connessione dati",
+      "answers": {
+        "B1": "no",
+        "B2": "yes"
+      },
+      "expect": {
+        "summary.cra": "applies",
+        "results.R1.notes": [
+          "hardware_with_data_connection"
+        ]
+      },
       "why_it": "Anche un prodotto hardware con connessione dati è un prodotto con elementi digitali.",
       "cites": "CRA Art. 3(1), 2(1)"
     },
     {
-      "id": "T21", "name_it": "Valutazione fatta prima dell'11/09/2026",
+      "id": "T21",
+      "name_it": "Valutazione fatta prima dell'11/09/2026",
       "evaluation_date": "2026-09-01",
       "answers": {},
-      "expect": {"results.R4.in_force": false, "summary.next_deadline.key": "CRA_REPORTING"},
+      "expect": {
+        "results.R4.in_force": false,
+        "summary.next_deadline.key": "CRA_REPORTING"
+      },
       "why_it": "Prima dell'11 settembre 2026 gli obblighi di segnalazione non erano ancora in vigore.",
       "cites": "CRA Art. 71(2)"
     },
     {
-      "id": "T22", "name_it": "Software di terzi senza SBOM",
-      "answers": {"B6": "yes", "D2": "partial"},
-      "expect": {"results.R10.sbom_note": true},
+      "id": "T22",
+      "name_it": "Software di terzi senza SBOM",
+      "answers": {
+        "B6": "yes",
+        "D2": "partial"
+      },
+      "expect": {
+        "results.R10.sbom_note": true
+      },
       "why_it": "Con componenti di terzi o open source l'inventario dei componenti (SBOM) diventa centrale.",
       "cites": "CRA Allegato I parte II(1)"
     },
     {
-      "id": "E01", "name_it": "Errore: risposta non prevista",
-      "answers": {"B4": "III.I.99"},
+      "id": "T23",
+      "name_it": "Dispositivo di protezione che rileva le persone (barriera fotoelettrica)",
+      "answers": {
+        "C1": "safety_component",
+        "C2": "B.15",
+        "C2h": "no"
+      },
+      "expect": {
+        "summary.mr": "applies",
+        "summary.mr_annex_i_part": "B",
+        "summary.mr_notified_body": "yes"
+      },
+      "why_it": "I dispositivi che rilevano le persone sono nell'Allegato I parte B: senza norme armonizzate applicate serve un organismo notificato.",
+      "cites": "MR Allegato I parte B punto 15; Art. 25(3)"
+    },
+    {
+      "id": "E01",
+      "name_it": "Errore: risposta non prevista",
+      "answers": {
+        "B4": "III.I.99"
+      },
       "expect_error": "B4: unknown option"
     },
     {
-      "id": "E02", "name_it": "Errore: manca il ruolo",
-      "answers": {"A1": null},
+      "id": "E02",
+      "name_it": "Errore: manca il ruolo",
+      "answers": {
+        "A1": null
+      },
       "expect_error": "A1 is required"
     },
     {
-      "id": "E03", "name_it": "Errore: modifica senza le tre domande",
-      "answers": {"C1": "machinery", "C6": "yes"},
+      "id": "E03",
+      "name_it": "Errore: modifica senza le tre domande",
+      "answers": {
+        "C1": "machinery",
+        "C6": "yes"
+      },
       "expect_error": "C6a is required"
     }
   ]
