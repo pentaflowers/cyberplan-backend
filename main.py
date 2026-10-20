@@ -32,6 +32,12 @@ def today() -> date:
     return datetime.now(TZ).date()
 
 
+@app.get("/")
+def root():
+    return {"service": "CyberPlan API by Pentaflowers", "rules_version": RULES["meta"]["rules_version"],
+            "selftest": "/api/v1/selftest", "docs": "/docs"}
+
+
 @app.get("/health")
 def health():
     return {"status": "ok", "rules_version": RULES["meta"]["rules_version"]}
